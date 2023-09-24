@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap');
 
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('fonts/static/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter-Semi-Bold';
+  src: url('fonts/static/Inter-SemiBold.ttf') format('truetype');
+}
+
+
 :root {
 
   --clr-blue: hsl(227, 92%, 58%);
@@ -8,7 +19,8 @@
   --clr-borders: hsl(200, 24%, 88%);
   --clr-pure-white: hsl(0, 0%, 100%);
 
-  --ff-inter-font-family: 'Inter', sans-serif;
+  --ff-inter-regular: 'Inter-Regular', sans-serif;
+  --ff-inter-semibold: 'Inter-Semi-Bold', sans-serif;
 
   --fs-heading-xl: 4rem;
   --fs-heading-l: 3rem;
@@ -25,6 +37,30 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+}
+
+.ff-inter-regular {
+  font-family: var(--ff-inter-regular);
+}
+
+.ff-inter-semibold {
+  font-family: var(--ff-inter-semibold);
+}
+
+.fs-heading-xl {
+  font-size: var(--fs-heading-xl);
+}
+
+.fs-heading-l {
+  font-size: var(--fs-heading-l);
+}
+
+.fs-heading-m {
+  font-size: var(--fs-heading-m);
+}
+
+.fs-heading-s {
+  font-size: var(--fs-heading-s);
 }
 
 *,
@@ -56,4 +92,48 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+
+
+
+.container {
+  background: lightgreen;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container::after {
+  content: "cm";
+  color: #345FF6;
+  position: absolute;
+  top: 25%;
+  right: 1rem;
+}
+
+.input-container.active::after {
+  content: "inch";
+}
+
+.input-box {
+  border: 1px solid;
+  border-color: #D8E2E7;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  color: hsl(200, 24%, 70%);
+}
+
+.input-box:active {
+  border: 1px solid #345FF6;
+}
+
+.input-box:focus {
+  color: black;
 }
