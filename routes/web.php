@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BMICalculatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/text-field', function () {
-  return view('components.text_field');
-});
+
+Route::get('/calculator', [BMICalculatorController::class, 'calculator']);
